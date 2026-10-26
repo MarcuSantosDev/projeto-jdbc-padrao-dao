@@ -1,10 +1,27 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Ignored default folder with query files
-/queries/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+
+# Java compilado
+*.class
+out/
+target/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Configurações locais
+.env
+.env.*
+!.env.example
+
+# Configurações do banco de dados com credenciais
+db.properties
+application-local.properties
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
