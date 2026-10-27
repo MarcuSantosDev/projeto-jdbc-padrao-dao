@@ -107,7 +107,7 @@ public class SellerDaoJDBC implements SellerDao {
 
             while (rs.next()){
                 Department dep = map.get(rs.getInt("DepartmentId"));
-                if(map == null){
+                if(dep == null){
                     dep = instantiateDepartment(rs);
                     map.put(rs.getInt("DepartmentId") ,dep );
                 }
