@@ -14,6 +14,9 @@ public class Program2 {
         List<Department> list = daoDepartment.findAll();
         list.forEach(System.out::println);
 
+        System.out.println("======== Test: Find by ID ========");
+        int id = 2;
+        System.out.println(daoDepartment.findById(id));
 
     }
 

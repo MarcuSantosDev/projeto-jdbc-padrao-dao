@@ -1,5 +1,6 @@
 package model.dao.impl;
 
+import db.DB;
 import db.DbException;
 import model.dao.DepartmentDao;
 import model.entities.Department;
@@ -36,7 +37,30 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public Department findById(Integer id) {
-        return null;
+
+            PreparedStatement st = null;
+            ResultSet rs = null;
+            try {
+                st = conn.prepareStatement("SELECT department.* FROM department WHERE department.id = ?;");
+                st.setInt(1,id);
+                rs = st.executeQuery();
+
+                if (rs.next()){
+                    Department dep = instantiateDepartment(rs);
+                    return dep;
+                }
+                else{
+                    throw new DbException("ID não existe no banco de dados");
+                }
+
+            }
+            catch (SQLException e){
+                throw new DbException(e.getMessage());
+            }
+            finally {
+                DB.closeResultSet(rs);
+                DB.closeStatement(st);
+            }
     }
 
     @Override
@@ -58,6 +82,10 @@ public class DepartmentDaoJDBC implements DepartmentDao {
         }
         catch (SQLException e){
             throw new DbException(e.getMessage());
+        }
+        finally {
+            DB.closeResultSet(rs);
+            DB.closeStatement(st);
         }
     }
 
