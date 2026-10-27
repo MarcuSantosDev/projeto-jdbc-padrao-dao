@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-public class db {
+public class DB {
 
     private static Connection conn = null;
 
