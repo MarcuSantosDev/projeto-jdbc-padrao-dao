@@ -6,6 +6,7 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Program {
@@ -18,8 +19,14 @@ public class Program {
         System.out.println("======== TEST 2: FindByDepartment ==========");
 
         Department dep = new Department(2,null);
-        List<Seller> list = sellerDao.findByDepartment(dep);
-        for (Seller s: list){
+        List<Seller> listByDepartment = sellerDao.findByDepartment(dep);
+        for (Seller s: listByDepartment){
+            System.out.println(s);
+        }
+
+        System.out.println("======== TEST 3: FindALl ==========");
+        List<Seller> listAll = sellerDao.findAll();
+        for (Seller s: listAll){
             System.out.println(s);
         }
     }
