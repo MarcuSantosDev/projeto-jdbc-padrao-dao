@@ -19,11 +19,16 @@ public class Program2 {
         System.out.println(daoDepartment.findById(id));
 
         System.out.println("======== Test: Insert ========");
-        Department newDepartment = new Department(10,"D10");
+        Department newDepartment = new Department(11,"D10");
         daoDepartment.insert(newDepartment);
 
-        System.out.println("Departament add with sucess !");
+        System.out.println("Departament add with sucess !\n");
         list.forEach(System.out::println);
+
+        System.out.println("======== Test: Update ========");
+        newDepartment.setName("D11");
+        daoDepartment.update(newDepartment);
+
     }
 
 
