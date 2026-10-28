@@ -29,9 +29,8 @@ public class Program2 {
         newDepartment.setName("D11");
         daoDepartment.update(newDepartment);
 
+        System.out.println("======== Test: Delete ========");
+        daoDepartment.deleteById(8);
+        System.out.println("Deleted with sucess !");
     }
-
-
-
-
 }
