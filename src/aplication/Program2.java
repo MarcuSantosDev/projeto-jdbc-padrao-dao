@@ -18,6 +18,12 @@ public class Program2 {
         int id = 2;
         System.out.println(daoDepartment.findById(id));
 
+        System.out.println("======== Test: Insert ========");
+        Department newDepartment = new Department(10,"D10");
+        daoDepartment.insert(newDepartment);
+
+        System.out.println("Departament add with sucess !");
+        list.forEach(System.out::println);
     }
 
 
